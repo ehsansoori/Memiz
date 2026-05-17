@@ -31,7 +31,7 @@ namespace AnkiCardGenerator.Api.Providers
             //throw new Exception("OpenAiProvider is being used");
 
             var apiKey = _configuration["OpenAI:ApiKey"];
-            var model = _configuration["OpenAI:Model"] ?? "gpt-5";
+            var model = _configuration["OpenAI:Model"] ?? "gpt-4o-mini";
 
             if (string.IsNullOrWhiteSpace(apiKey))
             {

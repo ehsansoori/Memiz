@@ -54,6 +54,18 @@ namespace AnkiCardGenerator.Api.Factories
             sb.AppendLine($"Generate exactly {exampleCount} examples.");
             sb.AppendLine();
             sb.AppendLine("Use this JSON shape:");
+            sb.AppendLine("Return ONLY raw valid JSON.");
+            sb.AppendLine("If the input is not a valid or meaningful word/phrase in the selected language:");
+            sb.AppendLine("- set \"isValid\" to false");
+            sb.AppendLine("- leave generated fields empty");
+            sb.AppendLine("- do not invent meanings");
+            sb.AppendLine("- do not invent examples");
+            sb.AppendLine("- still return valid JSON");
+            sb.AppendLine("Do not wrap the response in markdown.");
+            sb.AppendLine("Do not use ```json.");
+            sb.AppendLine("Do not write explanations.");
+            sb.AppendLine("The response must start with { and end with }.");
+            sb.AppendLine("All property names and string values must use double quotes.");
             sb.AppendLine("{");
 
             foreach (var field in fields)
