@@ -70,6 +70,34 @@ namespace AnkiCardGenerator.Api.Templates
                 }
             }
 
+            // handle isValid and suggestions
+            if (root.TryGetProperty("isValid", out var isValidProp) &&
+                isValidProp.ValueKind == JsonValueKind.False)
+            {
+                // mark invalid and clear any AI-provided fields to avoid fabricated content
+                // The CardBackDto supports IsValid and Suggestions (added in DTO)
+                result.IsValid = false;
+
+                if (root.TryGetProperty("suggestions", out var suggestions) &&
+                    suggestions.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (var s in suggestions.EnumerateArray())
+                    {
+                        var str = s.GetString();
+                        if (!string.IsNullOrWhiteSpace(str))
+                        {
+                            result.Suggestions.Add(str);
+                        }
+                    }
+                }
+
+                // ensure we don't keep AI-filled phonetic/meanings/examples when invalid
+                result.Phonetic = null;
+                result.TargetMeaning = null;
+                result.EnglishMeaning = null;
+                result.Examples.Clear();
+            }
+
             return result;
 
         }
