@@ -39,7 +39,8 @@ builder.Services.AddCors(options =>
             .WithOrigins(
                 "http://localhost:5173",
                 "http://127.0.0.1:5173",
-                "https://localhost:5173")
+                "https://localhost:5173",
+                "https://memiz.vercel.app")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -60,10 +61,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseCors("FrontendDev");
-}
+//}
 
 app.UseAuthorization();
 
