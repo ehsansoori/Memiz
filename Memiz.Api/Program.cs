@@ -40,7 +40,9 @@ builder.Services.AddCors(options =>
                 "http://localhost:5173",
                 "http://127.0.0.1:5173",
                 "https://localhost:5173",
-                "https://memiz.vercel.app")
+                "https://memiz.vercel.app",
+                "https://app.memiz.app"
+)
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
