@@ -7,7 +7,7 @@ namespace Memiz.Api.Interfaces
     {
         string Name { get; }
 
-        AiGeneratedContent GenerateContent(string input, GenerateCardsRequestDto request);
+        AiGeneratedContent GenerateContent(string input, GenerateLanguageCardsRequestDto request);
 
     }
 }

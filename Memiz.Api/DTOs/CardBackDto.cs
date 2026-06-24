@@ -2,12 +2,11 @@
 {
     public class CardBackDto
     {
-        public string Word { get; set; } = string.Empty;
-        public string? Meaning { get; set; }
-        public string? Phonetic { get; set; }
-        public string? PartOfSpeech { get; set; }
-        public string? TargetMeaning { get; set; }
-        public string? EnglishMeaning { get; set; }
+        public string input { get; set; } = string.Empty;
+        public List<PronunciationDto> Pronunciations { get; set; } = new();
+        public string? Translation { get; set; }
+       // public string? Definition { get; set; }
+        public List<string> PartOfSpeech { get; set; }=new();
         public List<ExampleDto> Examples { get; set; } = new();
         // Indicates whether the input is a valid / confidently recognized word or phrase.
         public bool IsValid { get; set; } = true;

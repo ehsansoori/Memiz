@@ -26,7 +26,7 @@ builder.Services.AddScoped<AiPromptFactory>();
 
 builder.Services.AddScoped<DictionaryProviderFactory>();
 builder.Services.AddScoped<AiProviderFactory>();
-builder.Services.AddScoped<ICardTemplate, BasicVocabularyTemplate>();
+builder.Services.AddScoped<ICardTemplate, LanguageTemplate>();
 builder.Services.AddScoped<TemplateFactory>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

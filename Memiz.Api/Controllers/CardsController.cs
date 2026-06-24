@@ -16,9 +16,9 @@ namespace Memiz.Api.Controllers
         }
 
         [HttpPost("generate")]
-        public IActionResult Generate([FromBody] GenerateCardsRequestDto request)
+        public IActionResult Generate([FromBody] GenerateLanguageCardsRequestDto request)
         {
-            var result = _cardService.GenerateCards(request);
+            var result = _cardService.GenerateLanguageCards(request);
             return Ok(result);
         }
     }

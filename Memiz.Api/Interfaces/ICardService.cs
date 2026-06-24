@@ -4,6 +4,6 @@ namespace Memiz.Api.Interfaces
 {
     public interface ICardService
     {
-        List<CardResponseDto> GenerateCards(GenerateCardsRequestDto request);
+        List<CardResponseDto> GenerateLanguageCards(GenerateLanguageCardsRequestDto request);
     }
 }

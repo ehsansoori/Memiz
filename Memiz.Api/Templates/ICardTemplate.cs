@@ -9,8 +9,8 @@ namespace Memiz.Api.Templates
 
         CardBackDto Format(
             string input,
-            DictionaryEntry dictionary,
+           //DictionaryEntry dictionary,
             AiGeneratedContent aiContent,
-            GenerateCardsRequestDto request);
+            GenerateLanguageCardsRequestDto request);
     }
 }

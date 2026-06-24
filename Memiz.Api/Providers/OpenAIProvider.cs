@@ -26,7 +26,7 @@ namespace Memiz.Api.Providers
 
         }
 
-        public AiGeneratedContent GenerateContent(string input, GenerateCardsRequestDto request)
+        public AiGeneratedContent GenerateContent(string input, GenerateLanguageCardsRequestDto request)
         {
             //throw new Exception("OpenAiProvider is being used");
 
@@ -78,7 +78,7 @@ namespace Memiz.Api.Providers
                 Content = content,
                 Provider = Name,
                 TargetLanguage = request.TargetLanguage,
-                Domain = request.Domain,
+                //Domain = request.Domain,
             };
         }
 
